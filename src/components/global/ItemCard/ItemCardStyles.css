@@ -1,0 +1,14 @@
+.ItemCard{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #DDD;
+    width: 250px;
+    height:300px;
+    margin: 20px 10px;
+}
+
+.item--title{
+    color:#666;
+}
