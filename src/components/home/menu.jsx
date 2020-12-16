@@ -1,3 +1,4 @@
+import CartWidget from './CartWidget';
 import './styles/menustyles.css';
 
 function Menu(){
@@ -11,7 +12,7 @@ return(
                 <li className="nav--item"><a href="index.js" className="link">Nosotros</a></li>
                 <li className="nav--item"><a href="index.js" className="link">Tienda</a></li>
                 <li className="nav--item"><a href="index.js" className="link">Contacto</a></li>
-                <li className="nav--item"><a href="index.js" className="link"><img src="../img/carro2.png"/></a></li>
+                <li className="nav--item"><a href="index.js" className="link"><CartWidget/></a></li>
             </ul>
         </nav>
     </header>
