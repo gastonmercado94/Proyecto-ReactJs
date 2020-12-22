@@ -7,6 +7,7 @@
     width: 250px;
     height:300px;
     margin: 20px 10px;
+    border-radius: 5px;
 }
 
 .item--title{
@@ -28,6 +29,7 @@
     color:white;
     font-size: 18px;
     border-radius: 20px;
+    border-style: none;
 }
 
 .qtyButton:active {
@@ -37,3 +39,14 @@
 .qtyButton:focus {
     outline: none !important;
 }
+
+.addbutton{
+    background:#555;
+    color:white;
+    width:180px;
+    height: 40px;
+    margin-top:20px;
+    border-radius: 8px;
+    border-style: none;
+}
+
