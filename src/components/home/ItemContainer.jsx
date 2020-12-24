@@ -12,36 +12,43 @@ const ProductList = () => {
             id: 1,
             name: 'Cheval des Andes 2017',
             price: 20,
+            desc: 'Desc product 1',
         },
         {
             id: 2,
             name: 'Catena Zapata',
             price: 30,
+            desc: 'Desc product 2',
         },
         {
             id: 3,
             name: 'Luigi Bosca',
             price: 15,
+            desc: 'Desc product 3',
         },
         {
             id: 4,
             name: 'Emilia',
             price: 12,
+            desc: 'Desc product 4',
         },
         {
             id: 5,
             name: 'Bianchi',
             price: 17,
+            desc: 'Desc product 5',
         },
         {
             id: 6,
             name: 'Rutini',
             price: 10,
+            desc: 'Desc product 6',
         },
         {
             id: 7,
             name: 'Casillero del Diablo',
             price: 25,
+            desc: 'Desc product 7',
         },
     ]
 
