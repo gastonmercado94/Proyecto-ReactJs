@@ -1,11 +1,11 @@
-const ItemDetail = ({item}) => {
+const ItemDetail = ({id, name, type, desc, price}) => {
     return (
         <div>
-            <h1>{item.name}</h1>
-            <p>El id de este producto es {item.id}</p>
-            <p>{item.desc}</p>
-            <p>{item.price}</p>
-            <button>Agregar al carrito</button>
+            <h1>{name}</h1>
+            <p>ID del producto: {id}</p>
+            <p>{type}</p>
+            <p>Descripcion: {desc}</p>
+            <p>${price}.00</p>
         </div>
     )
 }

@@ -1,12 +1,10 @@
 import {useState, useEffect} from 'react';
-import ItemCard from '../global/ItemCard/ItemCard';
-import ItemDetail from '../global/ItemDetail/ItemDetail';
-import './styles/ItemContainerStyles.css';
+import ItemDetail from './ItemDetail';
 
 
 
-const ProductList = () => {
-    const [items, setItems] = useState([]);
+const DetailContainer = () => {
+    const [item, setItem] = useState(null);
     
     const products = [
         {
@@ -69,7 +67,7 @@ const ProductList = () => {
     const getProducstFromDB = async () => {
         try {
             const result = await getProducts;
-            setItems(result);
+            setItem(result[5]);
         } catch(error) {
             alert('No podemos mostrar los productos en este momento');
         }
@@ -79,38 +77,22 @@ const ProductList = () => {
         getProducstFromDB();
     }, [])
 
-   
-
+    if(item==null){return null}
     return (
 
-        
-        
-        
-        <section className="ItemContainer">
-            <div className="container">
-                {
-                    items.length ?
-                    <>
-                        <ul className="ProductList">
-                            {
-                                items.map((item, index) => (
-                                    <li key={index} className="ProductList__item">
-                                        <ItemCard 
-                                            name={item.name} 
-                                            price={item.price} 
-                                        />
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </> :
-                    <p className="carga">Cargando items...</p>
-                }
-            </div>
+        <section className="DetailContainer">
+             <ItemDetail
+                name={item.name}
+                id={item.id}
+                type={item.type}
+                desc={item.desc}
+                price={item.price}
+             />                    
         </section>
+
+        
+        
     )
 }
 
-
-
-export default ProductList;
+export default DetailContainer;
