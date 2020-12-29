@@ -2,6 +2,10 @@
     background-color: black;
 }
 
+.linktitulo{
+    text-decoration: none;
+}
+
 .titulo{
     color: white;
     text-align: center;
