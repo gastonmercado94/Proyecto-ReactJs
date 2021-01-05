@@ -21,6 +21,7 @@ const ItemDetail = ({id, name, type, desc, price, img}) => {
         if(count>0){
         alert(`Agregaste ${count} ${name} al carrito`);
         setCount(0);
+        window.location.href="/cart";
         }
     }
 

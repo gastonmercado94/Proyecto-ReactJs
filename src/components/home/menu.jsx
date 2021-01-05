@@ -13,7 +13,7 @@ return(
                 <li className="nav--item"><a href="" className="link">Tintos</a></li>
                 <li className="nav--item"><a href="" className="link">Blancos</a></li>
                 <li className="nav--item"><a href="" className="link">Rosados</a></li>
-                <li className="nav--item"><a href="" className="link"><CartWidget/></a></li>
+                <li className="nav--item"><Link to="/cart"><CartWidget/></Link></li>
             </ul>
         </nav>
     </header>
