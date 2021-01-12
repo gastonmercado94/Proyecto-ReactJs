@@ -1,0 +1,71 @@
+.ItemCard{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #DDD;
+    width: 250px;
+    margin: 20px 10px;
+    border-radius: 5px;
+}
+
+.ItemCard img{
+    margin-top:10px;
+    height: 250px;
+    max-width: auto;
+}
+
+.item--title{
+    color:#666;
+}
+
+.CountContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.qtyButton{
+    width:30px;
+    height:30px;
+    background:#555;
+    color:white;
+    font-size: 18px;
+    border-radius: 20px;
+    border-style: none;
+}
+
+.qtyButton:active {
+    border-style: none !important;
+}
+
+.qtyButton:focus {
+    outline: none !important;
+}
+
+.addbutton{
+    background:#555;
+    color:white;
+    width:180px;
+    height: 40px;
+    margin-top:20px;
+    border-radius: 8px;
+    border-style: none;
+    font-size: 15px;
+}
+
+.linkdetail{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin: 10px 0 10px 0;
+    background:#777;
+    color:white;
+    width: 120px;
+    height:30px;
+    font-size:14px;
+    border-radius: 8px;
+}
