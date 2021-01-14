@@ -1,7 +1,13 @@
-import {useState, useEffect} from 'react';
+import {useState, useContext} from 'react';
 import './styles/DetailContainerStyles.css';
+import { useHistory } from "react-router-dom";
+import {Store} from '../../../store';
 
 const ItemDetail = ({id, name, type, desc, price, img}) => {
+
+    let history = useHistory();
+
+    const [data, setData] = useContext(Store);
 
     const [count, setCount] = useState (0);
 
@@ -18,17 +24,35 @@ const ItemDetail = ({id, name, type, desc, price, img}) => {
     }
 
     const onAdd = () =>{
+
+        let newItem = data.some(item => item.id == id);
+        if (newItem){
+            setData(
+            data.map (item =>{
+                if (item.id == id){
+                    return {id: id, name: name, price: price, cantidadItem: item.cantidadItem + count  };
+                }
+                return item;
+            }))
+        } else {
+            setData(
+                [...data, {id: id, name: name, price: price, cantidadItem: count}]
+            );
+        }
+
         if(count>0){
         alert(`Agregaste ${count} ${name} al carrito`);
         setCount(0);
-        window.location.href="/cart";
+        history.push("/cart");
         }
     }
+
+    console.log(data);
 
     return (
         <>
             <div className="divImg">
-                <img src={img}></img>
+                <img src={img} alt="Botella de vino"></img>
             </div>
             <div className="divInfo">
                 <h1>{name}</h1>

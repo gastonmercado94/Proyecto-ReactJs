@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import {BrowserRouter, Switch, Route, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import ItemDetail from './ItemDetail';
 import './styles/DetailContainerStyles.css';
@@ -65,6 +65,30 @@ const DetailContainer = () => {
             img: 'https://http2.mlstatic.com/vino-casillero-del-diablo-carmenere-750ml-envios-D_Q_NP_744209-MLA31114471755_062019-F.webp',
             name: 'Casillero del Diablo',
             type: 'Malbec',
+            price: 25,
+            desc: 'Desc product 7',
+        },
+        {
+            id: 8,
+            img: 'https://http2.mlstatic.com/vino-casillero-del-diablo-carmenere-750ml-envios-D_Q_NP_744209-MLA31114471755_062019-F.webp',
+            name: 'Altas Cumbres',
+            type: 'Vino',
+            price: 25,
+            desc: 'Desc product 7',
+        },
+        {
+            id: 9,
+            img: 'https://http2.mlstatic.com/vino-casillero-del-diablo-carmenere-750ml-envios-D_Q_NP_744209-MLA31114471755_062019-F.webp',
+            name: 'Lagarde',
+            type: 'Vino',
+            price: 25,
+            desc: 'Desc product 7',
+        },
+        {
+            id: 10,
+            img: 'https://http2.mlstatic.com/vino-casillero-del-diablo-carmenere-750ml-envios-D_Q_NP_744209-MLA31114471755_062019-F.webp',
+            name: 'Trapiche',
+            type: 'Vino',
             price: 25,
             desc: 'Desc product 7',
         },

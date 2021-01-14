@@ -1,0 +1,44 @@
+
+.CartContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Cart__product{
+    width: 80vw;
+    background-color: #DDD;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+    position: relative;
+}
+
+.Boton__eliminar{
+    background-color: #444;
+    height:40px;
+    width:170px;
+    border-style: none;
+    color:white;
+    font-size:15px;
+    border-radius: 5px;
+    position: absolute;
+    right: 30px;
+}
+
+.parrafo__nombre{
+    padding-left: 30px;
+}
+
+.parrafo__cantidad{
+    position: absolute;
+    right: 680px;
+}
+
+.parrafo__precio{
+    position: absolute;
+    right: 350px;
+}

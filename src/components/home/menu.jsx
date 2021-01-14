@@ -9,11 +9,11 @@ return(
         <Link to="/" className="linktitulo"><h1 className="titulo">Winery</h1></Link>
         <nav className="navbar">
             <ul className="menu">
-                <li className="nav--item"><a href="" className="link">Inicio</a></li>
-                <li className="nav--item"><a href="" className="link">Tintos</a></li>
-                <li className="nav--item"><a href="" className="link">Blancos</a></li>
-                <li className="nav--item"><a href="" className="link">Rosados</a></li>
-                <li className="nav--item"><Link to="/cart"><CartWidget/></Link></li>
+                <li className="nav--item link">Inicio</li>
+                <li className="nav--item link">Tintos</li>
+                <li className="nav--item link">Blancos</li>
+                <li className="nav--item link">Rosados</li>
+                <li className="nav--item link"><Link to="/cart"><CartWidget/></Link></li>
             </ul>
         </nav>
     </header>
