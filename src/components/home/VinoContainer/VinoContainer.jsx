@@ -1,17 +1,14 @@
 import {useState, useEffect} from 'react';
-import ItemCard from '../global/ItemCard/ItemCard';
-import './styles/ItemContainerStyles.css';
-import {getFirestore} from '../../db';
+import ItemCard from '../../global/ItemCard/ItemCard';
+import {getFirestore} from '../../../db';
 
-
-
-const ProductList = () => {
+const WineContainer = () => {
     const [items, setItems] = useState([]);
 
     const db = getFirestore();
 
     const getProducstFromDB = () => {
-       db.collection('productos').where("destacado", "==", true).get()
+       db.collection('productos').where("type", "==", "Wine").get()
        .then(docs => {
            let arr = [];
            docs.forEach(doc =>{
@@ -27,13 +24,14 @@ const ProductList = () => {
     useEffect(() => {
         getProducstFromDB();
     }, [])
-
    
 
     return (
+
+        
+        
         
         <section className="ItemContainer">
-            <h2>Productos destacados</h2>
             <div className="container">
                 {
                     items.length ?
@@ -62,4 +60,4 @@ const ProductList = () => {
 
 
 
-export default ProductList;
+export default WineContainer;

@@ -1,13 +1,24 @@
+.cart{
+display:flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.volverdiv{
+    width: 100% !important;
+}
 
 .CartContainer{
+    width: 80vw;
     display:flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
 }
 
 .Cart__product{
-    width: 80vw;
+    width: 55vw;
+    height: 35vh;
     background-color: #DDD;
     display:flex;
     flex-direction: row;
@@ -25,20 +36,71 @@
     color:white;
     font-size:15px;
     border-radius: 5px;
-    position: absolute;
-    right: 30px;
+    margin-top: 20px;
 }
 
 .parrafo__nombre{
-    padding-left: 30px;
+    font-size: 25px;
+    font-weight: 600;
+    margin: 10px 0 10px 0;
 }
 
 .parrafo__cantidad{
-    position: absolute;
-    right: 680px;
+    font-size: 18px;
+    margin: 10px 0 10px 0;
 }
 
 .parrafo__precio{
-    position: absolute;
-    right: 350px;
+    font-size: 18px;
+    margin: 10px 0 10px 0;
+} 
+
+.img__div{
+    width:40%;
+}
+
+.cart__img{
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.cart__div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.totaldiv{
+    position: fixed;
+    right:50px;
+    top: 260px;
+    width: 28vw;
+    border-left: solid 1px black;
+    padding-left: 15px;
+    background: #AAA;
+}
+
+.totalproductos{
+    width: 90%;
+    border-bottom: solid 1px black;
+}
+
+.boton__comprar{
+    background-color: #444;
+    height:40px;
+    width:170px;
+    border-style: none;
+    color:white;
+    font-size:15px;
+    border-radius: 5px;
+    transition: 0.5s;
+    margin-bottom: 20px;
+}
+
+.boton__comprar:hover{
+    background-color: #222;
 }

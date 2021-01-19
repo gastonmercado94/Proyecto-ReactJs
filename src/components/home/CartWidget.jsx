@@ -1,4 +1,4 @@
-import Carro from './img/carro2.png';
+import Carro from './img/carro4.png';
 import {Store} from '../../store';
 import {useContext} from 'react';
 

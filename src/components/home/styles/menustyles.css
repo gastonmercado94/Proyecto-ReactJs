@@ -30,12 +30,7 @@
 .link{
     text-decoration: none;
     color:white;
-    transition:0.3s;
     height:60px;
-}
-
-.link:hover{
-    color:lightskyblue;
 }
 
 .WidgetContainer{
@@ -59,4 +54,14 @@
 .WidgetContainer img{
     position: absolute;
     top: -5px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+a:hover{
+    color:lightskyblue;
 }

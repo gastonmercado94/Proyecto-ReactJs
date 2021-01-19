@@ -30,13 +30,13 @@ const ItemCard = ({name, price, img, id}) => {
             setData(
             data.map (item =>{
                 if (item.id == id){
-                    return {id: id, name: name, price: price, cantidadItem: item.cantidadItem + count  };
+                    return {id: id, name: name, price: price, cantidadItem: item.cantidadItem + count, img: img };
                 }
                 return item;
             }))
         } else {
             setData(
-                [...data, {id: id, name: name, price: price, cantidadItem: count}]
+                [...data, {id: id, name: name, price: price, cantidadItem: count, img: img}]
             );
         }
 
@@ -51,7 +51,7 @@ const ItemCard = ({name, price, img, id}) => {
     return(
         <>
             <div className="ItemCard">
-                <img src={img} alt="Botella de vino"></img>
+                <img src={img} alt="Botella"></img>
                 <h3 className="item--title">{name}</h3>
                 <p>${price}.00</p>
                 <div className="CountContainer">
