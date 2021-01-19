@@ -24,15 +24,26 @@ const ItemDetail = ({id, name, type, desc, price, img}) => {
     }
 
     const onAdd = () =>{
+
+        let newItem = data.some(item => item.id == id);
+        if (newItem){
+            setData(
+            data.map (item =>{
+                if (item.id == id){
+                    return {id: id, name: name, price: price, cantidadItem: item.cantidadItem + count  };
+                }
+                return item;
+            }))
+        } else {
+            setData(
+                [...data, {id: id, name: name, price: price, cantidadItem: count}]
+            );
+        }
+
         if(count>0){
-            setData({
-                ...data, 
-                cantidad: data.cantidad + count,
-                items: [...data.items, {id: id, name: name, price: price}],
-            });
-            alert(`Agregaste ${count} ${name} al carrito`);
-            setCount(0);
-            history.push("/cart");
+        alert(`Agregaste ${count} ${name} al carrito`);
+        setCount(0);
+        history.push("/cart");
         }
     }
 
@@ -41,7 +52,7 @@ const ItemDetail = ({id, name, type, desc, price, img}) => {
     return (
         <>
             <div className="divImg">
-                <img src={img}></img>
+                <img src={img} alt="Botella de vino"></img>
             </div>
             <div className="divInfo">
                 <h1>{name}</h1>

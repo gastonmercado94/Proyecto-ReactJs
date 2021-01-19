@@ -24,11 +24,22 @@ const ItemCard = ({name, price, img, id}) => {
     }
 
     const onAdd = () =>{
-        setData({
-            ...data, 
-            cantidad: data.cantidad + count,
-            items: [...data.items, {id: id, name: name, price: price}],
-        });
+
+        let newItem = data.some(item => item.id == id);
+        if (newItem){
+            setData(
+            data.map (item =>{
+                if (item.id == id){
+                    return {id: id, name: name, price: price, cantidadItem: item.cantidadItem + count, img: img };
+                }
+                return item;
+            }))
+        } else {
+            setData(
+                [...data, {id: id, name: name, price: price, cantidadItem: count, img: img}]
+            );
+        }
+
         if(count>0){
         alert(`Agregaste ${count} ${name} al carrito`);
         setCount(0);
@@ -40,7 +51,7 @@ const ItemCard = ({name, price, img, id}) => {
     return(
         <>
             <div className="ItemCard">
-                <img src={img}></img>
+                <img src={img} alt="Botella"></img>
                 <h3 className="item--title">{name}</h3>
                 <p>${price}.00</p>
                 <div className="CountContainer">

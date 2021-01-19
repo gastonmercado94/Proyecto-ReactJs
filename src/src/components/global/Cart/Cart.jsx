@@ -1,18 +1,52 @@
-import {Link} from 'react-router-dom';
 import {useContext} from 'react';
 import {Store} from '../../../store';
+import './cartStyles.css'
 
 const Cart = () => {
     const [data, setData] = useContext(Store);
+
+    const eliminar = (id) => {
+
+        setData(
+            data.filter(item => item.id != id)
+        )
+
+    }
+
     return(
-        <>
-            <div>
+             
+        <section class="cart">
+            
+            <div className="CartContainer">
                 {
-                    data.items.map(item => <p>{item.name}</p>)
+                    data.map(item => 
+                    <div className="Cart__product">
+                        <div class="img__div"><img src={item.img} alt="Botella" class="cart__img"></img></div>
+                        <div class="cart__div"> 
+                            <p className="parrafo__nombre">{item.name}</p>
+                            <p className="parrafo__cantidad">Cantidad: {item.cantidadItem}</p>
+                            <p className="parrafo__precio">Subtotal: ${item.price * item.cantidadItem}.00</p>
+                            <button className="Boton__eliminar" onClick={()=>eliminar(item.id)}>Eliminar Producto</button>
+                        </div>
+                    </div>)
                 }
             </div>
-            <Link to="/">Volver a inicio</Link>
-        </>
+            <div class="totaldiv">
+                <h4>Detalle total</h4>
+                <div class="totalproductos">
+                {
+                    data.map(item => 
+                    <div>
+                        <p>{item.name} - {item.cantidadItem} unidades</p>
+                    </div>)
+                }
+                </div>
+                <p>Cantidad de total:  unidades</p>
+                <p>Precio total: $.00</p>
+                <button className="boton__comprar">Realizar compra</button>
+            </div>
+        </section>   
+        
     )
 }
 
