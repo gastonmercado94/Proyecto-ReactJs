@@ -1,0 +1,17 @@
+form{
+    display:flex;
+    flex-direction: column;
+}
+
+form input{
+    width: 30%;
+    margin: 20px 10px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.boton__pagar{
+    width: 150px;
+    height: 40px;
+    margin-left: 10px;
+}

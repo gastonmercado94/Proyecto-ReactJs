@@ -1,5 +1,6 @@
 import {useContext} from 'react';
 import {Store} from '../../../store';
+import {Link} from 'react-router-dom';
 import './cartStyles.css'
 
 const Cart = () => {
@@ -12,6 +13,23 @@ const Cart = () => {
         )
 
     }
+
+    const cantidadTotal = () => {
+        let cantidad = 0;
+        data.forEach(item => {
+            cantidad = cantidad + item.cantidadItem;
+        });
+        return cantidad;
+    }
+
+    const precioTotal = () => {
+        let precio = 0;
+        data.forEach(item => {
+            precio = precio + item.cantidadItem * item.price;
+        });
+        return precio;
+    }
+
 
     return(
              
@@ -41,9 +59,9 @@ const Cart = () => {
                     </div>)
                 }
                 </div>
-                <p>Cantidad de total:  unidades</p>
-                <p>Precio total: $.00</p>
-                <button className="boton__comprar">Realizar compra</button>
+                <p>Cantidad de total: {cantidadTotal()} unidades</p>
+                <p>Precio total: ${precioTotal()}</p>
+                <Link to={"/checkout"} className="boton__comprar">Realizar compra</Link>
             </div>
         </section>   
         
