@@ -1,5 +1,6 @@
 .header{
     background-color: black;
+
 }
 
 .linktitulo{
@@ -27,8 +28,8 @@
 }
 
 
-.link{
-    text-decoration: none;
+.linkmenu{
+    text-decoration: none !important;
     color:white;
     height:60px;
 }
@@ -62,6 +63,6 @@ a{
     transition: 0.3s;
 }
 
-a:hover{
+.menu a:hover{
     color:lightskyblue;
 }

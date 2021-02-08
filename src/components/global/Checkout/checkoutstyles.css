@@ -1,0 +1,66 @@
+.form__section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+form{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form input{
+    width: 30%;
+    margin: 20px 10px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #DDD;
+    color: black;
+    padding-left: 10px;
+}
+
+.boton__pagar{
+    width: 150px;
+    height: 40px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #CCC;
+}
+
+.form__container{
+    width: 70%;
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.button__container{
+    width: 100%;
+    background-color: yellow;
+}
+
+.close__button{
+    position: absolute;
+    background-color: #666;
+    height: 40px;
+    width: 80px;
+    right: 20px;
+    bottom: 20px;
+    border-radius: 5px;
+    border:none;
+    color: white;
+}
+
+.modal__text h3{
+    margin-bottom: 30px;
+}
+
+.bold{
+    font-weight: 700;
+}

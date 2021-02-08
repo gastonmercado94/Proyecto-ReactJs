@@ -1,4 +1,5 @@
 import React, {useState, useContext} from 'react';
+import Modal from 'react-modal';
 import './ItemCardStyles.css';
 import {Link} from 'react-router-dom';
 import {Store} from '../../../store';
@@ -7,9 +8,11 @@ import {Store} from '../../../store';
 
 const ItemCard = ({name, price, img, id}) => {
 
-    const [count, setCount] = useState (0);
+    const [count, setCount] = useState(0);
 
     const [data, setData] = useContext(Store);
+
+    const [modalIsOpen, setModalIsOpen] = useState(false)
 
     const CantMinima = () => {
         if(count > 0) {
@@ -41,9 +44,13 @@ const ItemCard = ({name, price, img, id}) => {
         }
 
         if(count>0){
-        alert(`Agregaste ${count} ${name} al carrito`);
-        setCount(0);
+            setModalIsOpen(true)
         }
+    }
+
+    const modalFunction = () => {
+        setModalIsOpen(false)
+        setCount(0)
     }
 
     console.log(data);
@@ -62,6 +69,28 @@ const ItemCard = ({name, price, img, id}) => {
                         onClick={CantMaxima}>+</button>
                 </div>
                 <button onClick={onAdd} className="addbutton">Agregar al carrito</button>
+
+                <Modal isOpen={modalIsOpen} onRequestClose={modalFunction}
+                    style={{
+                        overlay: {
+                        backgroundColor: 'rgba(0,0,0,0.7)'
+                        },
+                        content: {
+                            top: '100px',
+                            left: '300px',
+                            right: '300px',
+                            bottom: '400px',
+                            backgroundColor: '#EEE'
+                        }
+                        }}
+                >
+                    <div className="modal__text">
+                        <p>Agregaste {count} {name} al carrito</p>
+                    </div>
+                    <div  className="button__container">
+                        <button onClick={modalFunction} className="close__button">Cerrar</button>
+                    </div>
+                </Modal>
                 <Link to={"/detail/" + id} className="linkdetail">Ver más</Link>
             </div>
         </>

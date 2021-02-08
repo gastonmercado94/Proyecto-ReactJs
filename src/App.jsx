@@ -10,6 +10,9 @@ import {Store} from './store';
 import WhiskeyContainer from './components/home/WhiskeyContainer/WhiskeyContainer';
 import GinContainer from './components/home/GinContainer/GinContainer';
 import WineContainer from './components/home/VinoContainer/VinoContainer';
+import Checkout from './components/global/Checkout/Checkout';
+
+
 
 function App() {
 
@@ -43,6 +46,10 @@ function App() {
 
             <Route path="/cart">
               <Cart/>
+            </Route>
+
+            <Route path="/checkout">
+              <Checkout/>
             </Route>
 
             <Route path="*">

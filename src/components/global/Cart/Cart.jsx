@@ -1,5 +1,6 @@
 import {useContext} from 'react';
 import {Store} from '../../../store';
+import {Link} from 'react-router-dom';
 import './cartStyles.css'
 
 const Cart = () => {
@@ -29,10 +30,6 @@ const Cart = () => {
         return precio;
     }
 
-    const comprar = () => {
-        setData([]);
-        alert('Felicidades por su compra');
-    }
 
     return(
              
@@ -64,7 +61,7 @@ const Cart = () => {
                 </div>
                 <p>Cantidad de total: {cantidadTotal()} unidades</p>
                 <p>Precio total: ${precioTotal()}</p>
-                <button onClick={comprar} className="boton__comprar">Realizar compra</button>
+                <div className="div__boton"><Link to={"/checkout"} className="boton__comprar">Realizar compra</Link></div>
             </div>
         </section>   
         
